@@ -20,14 +20,16 @@ namespace MovieandTVDatabase.Controllers
 
         public IActionResult Index()
         {
-            var movie = new MovieModel();
-            return View(movie);
+            //var movie = new MovieModel();
+            return View();
         }
 
-        public IActionResult Search(MovieModel movie)
+        public IActionResult Search(string movieTitle)
         {
+            var movie = new MovieModel();
+            movie.Title = movieTitle;
             var repo = new MovieRepository();
-            var movies = repo.GetMovies(movie.Title);
+            var movies = repo.GetMovies(movieTitle);
 
             return View(movies);
         }

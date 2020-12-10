@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MovieModel>
+﻿@model List<MovieModel>
 
 <h2>Movies</h2>
 
@@ -14,6 +14,6 @@
 <tr>
     <td><a href=/Movie/ViewMovie/@movie.Title>@movie.Title</a></td>
     <td>@movie.Year</td>
-    <td>@movie.Poster</td>
+    <td><img src="@movie.Poster" alt="@movie.Title"></td>
 </tr>}
 </table>
